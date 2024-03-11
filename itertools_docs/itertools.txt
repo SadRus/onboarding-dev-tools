@@ -1,0 +1,33 @@
+from itertools import *
+
+# бесконечные итераторы
+
+  - count(start=0, step=1)     - итератор, можно задать старт и шаг
+  - cycle(iterable)            - бесконечный итератор из итерируемого (бесконечно проходится по элемента)
+  - repeat(object, times=None) - итератор, object повторяется times-раз (None - бесконечно)
+
+# конечные итераторы
+
+  - accumulate(iterable, func=operator.add, *, initial=None) - итератор, накапливающий сумму или результат другой бинарной функции (e.g. operator.mul)
+  - batched(iterable, n)             - разбивает итерируемое на tuple длины n (from ver.3.12)
+  - chain(*iterables)                - итератор, проходящийся по нескольким итерируемым последовательно (будто по одному целому)
+  - chain.from_iterable(iterable)    - тоже самое только итератор проходит по внутренним элементам итерируемого
+  - compress(data, selectors)        - итератор по data, для которых соответствующий элемент selectors[i] = True
+  - dropwhile(predicate, iterable)   - итератор,который сначала "отбрасывает" элементы для которых условие predicate = True
+  - takewhile(predicate, iterable)   - итератор для элементов до тех пор пока predicate = True
+  - filterfalse(predicate, iterable) - итератор по элементам для которых predicate = False
+  - groupby(iterable, key=None)      - группирует элементы по ключам (предварительно нужно отсортировать) в список кортежей [(key1, iterator1), ...]
+  - islice(iterable, stop)
+  - islice(iterable, start, stop, step)     - возвращает итератор по срезу
+  - pairwise(iterable)                      - итератор по последовательным перекрывающимся парам
+  - starmap(function, iterable)             - итератор, применяющий функцию к предварительно сжатым в кортежи элементам итерируемого
+  - tee(iterable, n=2)                      - возвращает n независимых итераторов из одного итерируемого объекта.
+  - zip_longest(*iterables, fillvalue=None) - итератор, агрегирующий элементы из каждого итерируемого, для недостающих пар используется значение fillvalue
+
+# комбинаторные итераторы
+
+ - product(*iterables,repeat)     - итератор декартова произведение (в случае 2 итерируемых, элементы левого итерируемого "перемножаются" с элементами правого)
+ - permutations(iterable, r=None) - итератор по всем вариантам перестановки элементов внутри итерируемого
+ - combinations(iterable, r)      - возвращает подпоследовательности длины r из элементов итерируемого объекта, подаваемого на вход.
+ - combinations_with_replacement (iterable, r) - возвращает подпоследовательности, но элементы могут дублироваться
+
